@@ -7,10 +7,10 @@ Welcome to your **Astro + Supabase blog starter**! This repository contains a mi
 - **Astro v5** configured for a static build (`output: 'static'`) and optimized for GitHub Pages.
 - **React islands architecture**—only interactive components (like the blog list and login widget) are hydrated on the client.
 - **Tailwind CSS** integrated via `@astrojs/tailwind` and ready for custom styling.
-- **Supabase client** initialized in `src/lib/supabase.ts` with environment variables for URL and anon key【182340229106658†L360-L373】【182340229106658†L428-L444】.
+- **Supabase client** initialized in `src/lib/supabase.ts` with environment variables for URL and anon key.
 - **Simple email magic‑link authentication** (`AuthPanel.tsx`) for admin login.
 - **Blog** page with dynamic routes (`src/pages/blog/[slug].astro`) and client‑side data fetching via Supabase.
-- **GitHub Actions workflow** to automatically build and deploy the site to GitHub Pages【181218810742146†L344-L424】.
+- **GitHub Actions workflow** to automatically build and deploy the site to GitHub Pages.
 - **Template‐ready**: you can mark this repo as a template in GitHub settings and use it for future projects.
 
 ## 🧑‍💻 Getting Started
@@ -23,7 +23,7 @@ Welcome to your **Astro + Supabase blog starter**! This repository contains a mi
    SUPABASE_ANON_KEY=<your-anon-key>
    ```
 
-   Supabase credentials are safe to publish; they’re public environment variables used for client‑side access【182340229106658†L360-L373】.
+   Supabase credentials are safe to publish; they’re public environment variables used for client‑side access.
 
 3. **Install dependencies** (requires Node 18+ and `pnpm` or `npm`):
 
@@ -34,11 +34,11 @@ Welcome to your **Astro + Supabase blog starter**! This repository contains a mi
 
    The site runs locally at http://localhost:4321.
 
-4. **Customize `astro.config.mjs`.** Set `site` to your GitHub Pages URL and `base` to your repository name if using a `<username>.github.io/<repo>` sub‑directory【181218810742146†L442-L483】.  When deploying to a custom domain, remove `base` and update `site` accordingly【181218810742146†L524-L537】.
+4. **Customize `astro.config.mjs`.** Set `site` to your GitHub Pages URL and `base` to your repository name if using a `<username>.github.io/<repo>` sub‑directory.  When deploying to a custom domain, remove `base` and update `site` accordingly.
 
-5. **Push to GitHub.**  The included workflow file `.github/workflows/deploy.yml` will build and deploy your site automatically using the official Astro GitHub Action【181218810742146†L344-L424】.  Add your Supabase credentials as repository secrets (`SUPABASE_URL` and `SUPABASE_ANON_KEY`) if you prefer not to commit them.
+5. **Push to GitHub.**  The included workflow file `.github/workflows/deploy.yml` will build and deploy your site automatically using the official Astro GitHub Action.  Add your Supabase credentials as repository secrets (`SUPABASE_URL` and `SUPABASE_ANON_KEY`) if you prefer not to commit them.
 
-6. **(Optional) Configure a custom domain.**  Add your domain to `public/CNAME`, update `site` in `astro.config.mjs`, and point your DNS records to GitHub Pages【181218810742146†L514-L523】.
+6. **(Optional) Configure a custom domain.**  Add your domain to `public/CNAME`, update `site` in `astro.config.mjs`, and point your DNS records to GitHub Pages.
 
 ## 🧱 Supabase Setup
 
@@ -58,7 +58,7 @@ create table if not exists posts (
 );
 ```
 
-Enable **row‑level security** (RLS) and add policies so published posts are readable by anyone while drafts are only visible to their authors【960396642597453†L182-L186】:
+Enable [**row‑level security** (RLS)](https://supabase.com/docs/guides/database/postgres/row-level-security) and add policies so published posts are readable by anyone while drafts are only visible to their authors:
 
 ```sql
 alter table posts enable row level security;
@@ -100,8 +100,8 @@ To make this repository a template on GitHub:
 
 This starter follows best practices recommended in the official Astro and Supabase documentation:
 
-- Deploying Astro to GitHub Pages via GitHub Actions【181218810742146†L344-L424】【181218810742146†L442-L483】.
-- Using environment variables and initializing the Supabase client in Astro【182340229106658†L360-L373】【182340229106658†L428-L444】.
-- Enabling row‑level security in Supabase to secure public tables【960396642597453†L182-L186】.
+- [Deploying Astro to GitHub Pages via GitHub Actions.](https://docs.astro.build/en/guides/deploy/github/)
+- [Using environment variables and initializing the Supabase client in Astro.](https://docs.astro.build/en/guides/backend/supabase/)
+- [Enabling row‑level security in Supabase to secure public tables.](https://supabase.com/docs/guides/database/postgres/row-level-security)
 
 We hope this template helps you build a fast, scalable, and maintainable blog.  Happy building!
